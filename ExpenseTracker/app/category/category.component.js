@@ -64,8 +64,11 @@ var CategoryComponent = (function () {
             if (category.categoryID < 1)
                 _this.categories.push(result);
             else {
-                var item = _this.categories.find(function (item) { return item.categoryID == category.categoryID; });
-                item = category;
+                var updateItem = _this.categories.find(function (item) { return item.categoryID == category.categoryID; });
+                var index = _this.categories.indexOf(updateItem);
+                _this.categories[index] = _this.model;
+                //const item = this.categories.find(item => item.categoryID == category.categoryID);
+                //item.categoryName = category;
                 //this.categories.splice(index, 1);
                 //this.categories[index] = this.model;
                 //this.categories.

@@ -71,11 +71,11 @@ export class CategoryComponent implements OnInit {
                     this.categories.push(result);
                 else
                 {
-                    const item = this.categories.find(item => item.categoryID == category.categoryID);
-                    item.categoryName = category;
-                    //this.categories.splice(index, 1);
-                    //this.categories[index] = this.model;
-                    //this.categories.
+                    let updateItem = this.categories.find(item => item.categoryID == category.categoryID);
+
+                    let index = this.categories.indexOf(updateItem);
+
+                    this.categories[index] = this.model;
                 }
             },
             error => {
