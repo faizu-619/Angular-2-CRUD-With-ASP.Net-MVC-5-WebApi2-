@@ -9,7 +9,7 @@ import { IExpense } from './../models/expense';
 })
 export class ExpenseComponent implements OnInit {
     //expenses: IExpense[];
-    name = "Faizan";
+    name = "Expenses";
     expenses: IExpense[];
     submitted = true;
     model: IExpense = { expenseID: 0, expenseAmount: 0, expenseDate: '', expenseDesc: '', categoryID: 0, categoryName: '', transactionType: '' };

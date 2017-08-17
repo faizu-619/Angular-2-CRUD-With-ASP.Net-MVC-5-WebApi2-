@@ -6,10 +6,30 @@
     <form (ngSubmit)="onSubmit()" #expenseForm="ngForm">
         {{diagnostic}}
         <div class="form-group">
-            <label for="expenseName"> </label>
-            <input type="text" class="form-control" id="expenseName"
+            <label for="expenseDate">Date</label>
+            <input type="text" class="form-control" id="expenseDate"
                    required
-                   [(ngModel)]="model.expenseName" name="expenseName">
+                   [(ngModel)]="model.expenseDate" name="expenseDate">
+        </div>
+        <!--<div class="form-group">
+            <label for="categoryID">Category</label>
+            <select class="form-control" id="categoryID"
+                    required
+                    [(ngModel)]="model.categoryID" name="categoryID">
+                <option *ngFor="let category of categories" [value]="category.categoryID">{{category.categoryName}}</option>
+            </select>
+        </div>-->
+        <div class="form-group">
+            <label for="transactionType">Transaction Type</label>
+            <input type="text" class="form-control" id="transactionType"
+                   required
+                   [(ngModel)]="model.transactionType" name="transactionType">
+        </div>
+        <div class="form-group">
+            <label for="expenseAmount">Amount </label>
+            <input type="text" class="form-control" id="expenseAmount"
+                   required
+                   [(ngModel)]="model.expenseAmount" name="expenseAmount">
         </div>
 
         <div class="form-group">
@@ -17,7 +37,6 @@
             <input type="text" class="form-control" id="expenseDesc"
                    [(ngModel)]="model.expenseDesc" name="expenseDesc">
         </div>
-
         <!--<div class="form-group">
             <label for="power">Hero Power</label>
             <select class="form-control" id="power"
@@ -38,7 +57,7 @@
                 <th>Id</th>
                 <th>Date</th>
                 <th>Amount</th>
-                <th>expense</th>
+                <th>Category</th>
                 <th>Type</th>
                 <th>Description</th>
                 <th>Actions</th>
