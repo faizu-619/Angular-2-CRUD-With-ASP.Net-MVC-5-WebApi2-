@@ -229,6 +229,7 @@
     <Content Include="app\menu\menu.component.html" />
     <TypeScriptCompile Include="app\menu\menu.component.ts" />
     <TypeScriptCompile Include="app\models\category.ts" />
+    <TypeScriptCompile Include="app\models\expense.ts" />
     <TypeScriptCompile Include="app\shared.service.ts" />
   </ItemGroup>
   <PropertyGroup>

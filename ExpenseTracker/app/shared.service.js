@@ -18,6 +18,7 @@ var SharedService = (function () {
         this._http = _http;
         this.baseUrl = "api/";
     }
+    //Category Start
     SharedService.prototype.getCategories = function () {
         return this._http.get(this.baseUrl + 'Categories/GetCategories')
             .map(function (responce) { return responce.json(); })
@@ -42,6 +43,35 @@ var SharedService = (function () {
     };
     SharedService.prototype.removeCategory = function (id) {
         return this._http.delete(this.baseUrl + 'Categories/DeleteCategory/' + id)
+            .map(function (responce) { return responce.json(); })
+            .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
+    };
+    //Category End
+    //Expense Start
+    SharedService.prototype.getExpenses = function () {
+        return this._http.get(this.baseUrl + 'Expenses/GetExpenses')
+            .map(function (responce) { return responce.json(); })
+            .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
+    };
+    SharedService.prototype.getExpense = function (id) {
+        return this._http.get(this.baseUrl + 'Expenses/GetExpense/' + id)
+            .map(function (responce) { return responce.json(); })
+            .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
+    };
+    SharedService.prototype.saveExpense = function (_expense) {
+        if (_expense.categoryID < 1) {
+            return this._http.post(this.baseUrl + 'Expenses/PostExpense', _expense)
+                .map(function (responce) { return responce.json(); })
+                .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
+        }
+        else {
+            return this._http.put(this.baseUrl + 'Expenses/PutExpense/' + _expense.expenseID, _expense)
+                .map(function (responce) { return responce.json(); })
+                .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
+        }
+    };
+    SharedService.prototype.removeExpense = function (id) {
+        return this._http.delete(this.baseUrl + 'Expenses/DeleteExpense/' + id)
             .map(function (responce) { return responce.json(); })
             .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
     };

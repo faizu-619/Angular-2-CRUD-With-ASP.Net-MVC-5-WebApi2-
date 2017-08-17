@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-//import { } from ''
 var shared_service_1 = require("./../shared.service");
 var CategoryComponent = (function () {
     function CategoryComponent(_sharedService) {
@@ -67,11 +66,6 @@ var CategoryComponent = (function () {
                 var updateItem = _this.categories.find(function (item) { return item.categoryID == category.categoryID; });
                 var index = _this.categories.indexOf(updateItem);
                 _this.categories[index] = _this.model;
-                //const item = this.categories.find(item => item.categoryID == category.categoryID);
-                //item.categoryName = category;
-                //this.categories.splice(index, 1);
-                //this.categories[index] = this.model;
-                //this.categories.
             }
         }, function (error) {
             console.log('Error: failed to load categories.');

@@ -1,5 +1,4 @@
 ﻿import { Component, OnInit } from '@angular/core';
-//import { } from ''
 import { SharedService } from './../shared.service';
 import { ICategory } from './../models/category';
 
