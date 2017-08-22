@@ -221,6 +221,7 @@
     <Content Include="app\config\config.component.css" />
     <Content Include="app\config\config.component.html" />
     <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\category\category-dropdown.component.ts" />
     <TypeScriptCompile Include="app\category\category.component.ts" />
     <TypeScriptCompile Include="app\config\config.component.ts" />
     <TypeScriptCompile Include="app\expense\expense.component.ts" />

@@ -15,7 +15,7 @@ var ExpenseComponent = (function () {
     function ExpenseComponent(_sharedService) {
         this._sharedService = _sharedService;
         //expenses: IExpense[];
-        this.name = "Faizan";
+        this.name = "Expenses";
         this.submitted = true;
         this.model = { expenseID: 0, expenseAmount: 0, expenseDate: '', expenseDesc: '', categoryID: 0, categoryName: '', transactionType: '' };
     }
@@ -79,6 +79,15 @@ var ExpenseComponent = (function () {
             console.log(error);
         });
     };
+    ExpenseComponent.prototype.getSelectedCategory = function (selectedValue) {
+        this.model.categoryID = selectedValue;
+    };
+    Object.defineProperty(ExpenseComponent.prototype, "diagnostic", {
+        // TODO: Remove this when we're done
+        get: function () { return JSON.stringify(this.model); },
+        enumerable: true,
+        configurable: true
+    });
     ExpenseComponent = __decorate([
         core_1.Component({
             selector: 'app-expense',

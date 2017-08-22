@@ -63,7 +63,7 @@ export class SharedService {
     }
 
     saveExpense(_expense: IExpense) {
-        if (_expense.categoryID < 1) {
+        if (_expense.expenseID < 1) {
             return this._http.post(this.baseUrl + 'Expenses/PostExpense', _expense)
                 .map(responce => { return responce.json(); })
                 .catch(error => Observable.throw(error.json()));

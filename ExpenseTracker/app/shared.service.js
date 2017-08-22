@@ -59,7 +59,7 @@ var SharedService = (function () {
             .catch(function (error) { return Observable_1.Observable.throw(error.json()); });
     };
     SharedService.prototype.saveExpense = function (_expense) {
-        if (_expense.categoryID < 1) {
+        if (_expense.expenseID < 1) {
             return this._http.post(this.baseUrl + 'Expenses/PostExpense', _expense)
                 .map(function (responce) { return responce.json(); })
                 .catch(function (error) { return Observable_1.Observable.throw(error.json()); });

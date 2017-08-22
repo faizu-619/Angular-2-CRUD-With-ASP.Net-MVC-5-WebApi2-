@@ -15,6 +15,7 @@ var menu_component_1 = require("./menu/menu.component");
 var config_component_1 = require("./config/config.component");
 var category_component_1 = require("./category/category.component");
 var expense_component_1 = require("./expense/expense.component");
+var category_dropdown_component_1 = require("./category/category-dropdown.component");
 var app_routing_1 = require("./app.routing");
 var shared_service_1 = require("./shared.service");
 var AppModule = (function () {
@@ -33,7 +34,8 @@ var AppModule = (function () {
                 menu_component_1.MenuComponent,
                 config_component_1.ConfigComponent,
                 category_component_1.CategoryComponent,
-                expense_component_1.ExpenseComponent
+                expense_component_1.ExpenseComponent,
+                category_dropdown_component_1.CategoriesDropdown,
             ],
             providers: [shared_service_1.SharedService],
             bootstrap: [app_component_1.AppComponent]

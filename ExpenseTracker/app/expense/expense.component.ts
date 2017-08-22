@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { SharedService } from './../shared.service';
 import { IExpense } from './../models/expense';
+import { CategoriesDropdown } from './../category/category-dropdown.component'
 
 @Component({
     selector: 'app-expense',
@@ -87,4 +88,11 @@ export class ExpenseComponent implements OnInit {
                 console.log(error);
             });
     }
+
+    getSelectedCategory(selectedValue: any): void {
+        this.model.categoryID = selectedValue;
+    }
+
+    // TODO: Remove this when we're done
+    get diagnostic() { return JSON.stringify(this.model); }
 }

@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ConfigComponent } from './config/config.component';
 import { CategoryComponent } from './category/category.component';
 import { ExpenseComponent } from './expense/expense.component';
+import { CategoriesDropdown } from './category/category-dropdown.component';
 import { CONST_ROUTE } from './app.routing';
 import { SharedService } from './shared.service';
 
@@ -25,7 +26,8 @@ import { SharedService } from './shared.service';
         MenuComponent,
         ConfigComponent,
         CategoryComponent,
-        ExpenseComponent
+        ExpenseComponent,
+        CategoriesDropdown,
     ],
     providers: [SharedService],
     bootstrap: [AppComponent]

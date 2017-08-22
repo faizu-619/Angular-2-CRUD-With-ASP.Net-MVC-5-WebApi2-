@@ -11,14 +11,15 @@
                    required
                    [(ngModel)]="model.expenseDate" name="expenseDate">
         </div>
-        <!--<div class="form-group">
+        <div class="form-group">
             <label for="categoryID">Category</label>
-            <select class="form-control" id="categoryID"
+            <category-dropdown (onSelected)='getSelectedCategory($event)'></category-dropdown>
+            <!--<select class="form-control" id="categoryID"
                     required
                     [(ngModel)]="model.categoryID" name="categoryID">
                 <option *ngFor="let category of categories" [value]="category.categoryID">{{category.categoryName}}</option>
-            </select>
-        </div>-->
+            </select>-->
+        </div>
         <div class="form-group">
             <label for="transactionType">Transaction Type</label>
             <input type="text" class="form-control" id="transactionType"
