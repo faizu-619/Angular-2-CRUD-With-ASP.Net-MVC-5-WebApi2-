@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using ETDAL;
+using ExpenseTracker.Models;
 
 namespace ExpenseTracker.Controllers.api
 {
@@ -18,9 +19,17 @@ namespace ExpenseTracker.Controllers.api
         private DataModel db = new DataModel();
 
         // GET: api/Expenses
-        public IQueryable<Expense> GetExpenses()
+        public IQueryable<ExpenseViewModel> GetExpenses()
         {
-            return db.Expenses;
+            //var query = (from expense in db.Expenses
+            //             join category in db.Categories on expense.categoryID equals category.categoryID
+            //             select expense.expenseID).ToList();
+            var data = db.Expenses
+                .Join(db.Categories,
+                expenses => expenses.categoryID,
+                category => category.categoryID,
+                (expenses, category) => new ExpenseViewModel { expenseID = expenses.expenseID, expenseAmount = expenses.expenseAmount, expenseDate = expenses.expenseDate, expenseDesc = expenses.expenseDesc, categoryID = expenses.categoryID, categoryName = category.categoryName, transactionType = expenses.transactionType });
+            return data;//db.Expenses;
         }
 
         // GET: api/Expenses/5
