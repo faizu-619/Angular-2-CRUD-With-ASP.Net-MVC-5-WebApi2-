@@ -8,12 +8,12 @@
         <div class="form-group">
             <label for="expenseDate">Date</label>
             <input type="text" class="form-control" id="expenseDate"
-                   required
-                   [(ngModel)]="model.expenseDate" name="expenseDate">
+                   required [value]="model.expenseDate | date: 'short'"  dateTimePicker
+                   [(ngModel)]="model.expenseDate" name="expenseDate" [mode]="'dropdown'">
         </div>
         <div class="form-group">
             <label for="categoryID">Category</label>
-            <category-dropdown (onSelected)='getSelectedCategory($event)'></category-dropdown>
+            <category-dropdown [selectedValue]="model.categoryID" (onSelected)='getSelectedCategory($event)'></category-dropdown>
             <!--<select class="form-control" id="categoryID"
                     required
                     [(ngModel)]="model.categoryID" name="categoryID">
@@ -22,9 +22,10 @@
         </div>
         <div class="form-group">
             <label for="transactionType">Transaction Type</label>
-            <input type="text" class="form-control" id="transactionType"
+            <trans-type [selectedValue]="model.transactionType" (onSelected)='getSelectedTransType($event)'></trans-type>
+            <!--<input type="text" class="form-control" id="transactionType"
                    required
-                   [(ngModel)]="model.transactionType" name="transactionType">
+                   [(ngModel)]="model.transactionType" name="transactionType">-->
         </div>
         <div class="form-group">
             <label for="expenseAmount">Amount </label>

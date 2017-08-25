@@ -93,6 +93,10 @@ export class ExpenseComponent implements OnInit {
         this.model.categoryID = selectedValue;
     }
 
+    getSelectedTransType(selectedValue: any): void {
+        this.model.transactionType = selectedValue;
+    }
+
     // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.model); }
 }

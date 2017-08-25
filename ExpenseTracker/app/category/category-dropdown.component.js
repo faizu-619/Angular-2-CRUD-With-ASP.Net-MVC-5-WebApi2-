@@ -45,6 +45,10 @@ var CategoriesDropdown = (function () {
         configurable: true
     });
     __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], CategoriesDropdown.prototype, "selectedValue", void 0);
+    __decorate([
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)
     ], CategoriesDropdown.prototype, "onSelected", void 0);

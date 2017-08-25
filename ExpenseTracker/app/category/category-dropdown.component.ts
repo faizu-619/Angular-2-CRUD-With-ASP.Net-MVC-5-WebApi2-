@@ -1,4 +1,4 @@
-﻿import { Directive, Component, OnInit, Output, EventEmitter } from '@angular/core';
+﻿import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { SharedService } from './../shared.service';
 import { ICategory } from './../models/category';
 
@@ -16,7 +16,7 @@ import { ICategory } from './../models/category';
 })
 export class CategoriesDropdown implements OnInit {
     categories: ICategory[];
-    selectedValue: string;
+    @Input() selectedValue: string;
     @Output() onSelected: EventEmitter<any> = new EventEmitter<any>();
 
     constructor(private _sharedService: SharedService) {

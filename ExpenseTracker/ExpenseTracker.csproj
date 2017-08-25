@@ -232,6 +232,7 @@
     <TypeScriptCompile Include="app\models\category.ts" />
     <TypeScriptCompile Include="app\models\expense.ts" />
     <TypeScriptCompile Include="app\shared.service.ts" />
+    <TypeScriptCompile Include="app\transactiontype.dropdown.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
